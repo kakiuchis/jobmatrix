@@ -55,6 +55,6 @@ class LevelsController < ApplicationController
     end
 
     def level_params
-      params.require(:level).permit(:field_id, :height, :mintariff, :maxtariff, :name, :skill, :tool, :certificate, :field_id)
+      params.require(:level).permit(:field_id, :height, :mintariff, :maxtariff, :name, :skill, :tool, :certificate)
     end
 end
