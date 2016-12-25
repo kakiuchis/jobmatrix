@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field_id: 
+  height: 1
+  mintariff: 1
+  maxtariff: 1
+  name: MyString
+  skill: MyText
+  tool: MyText
+  certificate: MyText
+  field_id: 1
+
+two:
+  field_id: 
+  height: 1
+  mintariff: 1
+  maxtariff: 1
+  name: MyString
+  skill: MyText
+  tool: MyText
+  certificate: MyText
+  field_id: 1

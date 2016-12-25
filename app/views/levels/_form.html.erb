@@ -1,0 +1,53 @@
+<%= form_for([@field, @level]) do |f| %>
+  <% if @level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@level.errors.count, "error") %> prohibited this level from being saved:</h2>
+
+      <ul>
+      <% @level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :field_id %><br>
+    <%= f.text_field :field_id %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :mintariff %><br>
+    <%= f.number_field :mintariff %>
+  </div>
+  <div class="field">
+    <%= f.label :maxtariff %><br>
+    <%= f.number_field :maxtariff %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :skill %><br>
+    <%= f.text_area :skill %>
+  </div>
+  <div class="field">
+    <%= f.label :tool %><br>
+    <%= f.text_area :tool %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate %><br>
+    <%= f.text_area :certificate %>
+  </div>
+  <div class="field">
+    <%= f.label :field_id %><br>
+    <%= f.number_field :field_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
