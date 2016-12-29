@@ -4,6 +4,7 @@ class LevelsController < ApplicationController
 
   def index
     @levels = @field.levels.all
+    @fields = Field.all
   end
 
   def show
