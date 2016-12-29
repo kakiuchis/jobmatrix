@@ -17,11 +17,11 @@ class LevelsController < ApplicationController
   end
 
   def create
-    @level = @field.levels.build
+    @level = @field.levels.build(level_params)
 
     respond_to do |format|
       if @level.save
-        format.html { redirect_to [@field, @level], notice: 'Level was successfully created.' }
+        format.html { redirect_to field_levels_url, notice: 'Level was successfully created.' }
       else
         format.html { render :new }
       end
@@ -31,7 +31,7 @@ class LevelsController < ApplicationController
   def update
     respond_to do |format|
       if @level.update(level_params)
-        format.html { redirect_to [@field, @level], notice: 'Level was successfully updated.' }
+        format.html { redirect_to field_levels_url, notice: 'Level was successfully updated.' }
       else
         format.html { render :edit }
       end

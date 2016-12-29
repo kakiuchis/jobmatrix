@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :field_id %><br>
-    <%= f.text_field :field_id %>
+    <%= f.hidden_field :field_id %>
   </div>
   <div class="field">
     <%= f.label :height %><br>
@@ -21,11 +20,11 @@
   </div>
   <div class="field">
     <%= f.label :mintariff %><br>
-    <%= f.number_field :mintariff %>
+    <%= f.number_field :mintariff %>万円
   </div>
   <div class="field">
     <%= f.label :maxtariff %><br>
-    <%= f.number_field :maxtariff %>
+    <%= f.number_field :maxtariff %>万円
   </div>
   <div class="field">
     <%= f.label :name %><br>
@@ -42,10 +41,6 @@
   <div class="field">
     <%= f.label :certificate %><br>
     <%= f.text_area :certificate %>
-  </div>
-  <div class="field">
-    <%= f.label :field_id %><br>
-    <%= f.number_field :field_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
