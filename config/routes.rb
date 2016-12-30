@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :fields do
-    resources :levels do
-      resources :projects
+  resources :fields, except: :show do
+    resources :levels, except: :show do
+      resources :projects, except: :show
     end
   end
 

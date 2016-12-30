@@ -1,13 +1,10 @@
 class LevelsController < ApplicationController
   before_action :set_field
-  before_action :set_level, only: [:show, :edit, :update, :destroy]
+  before_action :set_level, only: [:edit, :update, :destroy]
 
   def index
     @levels = @field.levels.all
     @fields = Field.all
-  end
-
-  def show
   end
 
   def new
