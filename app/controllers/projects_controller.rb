@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to [@field, @level, @project], notice: 'Project was successfully created.' }
+        format.html { redirect_to field_level_projects_path, notice: 'Project was successfully created.' }
       else
         format.html { render :new }
       end
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to [@field, @level, @project], notice: 'Project was successfully updated.' }
+        format.html { redirect_to field_level_projects_path, notice: 'Project was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -41,20 +41,18 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to field_level_projects_url, notice: 'Project was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to field_level_projects_path, notice: 'Project was successfully destroyed.' }
     end
   end
 
   private
     def set_field_level
-      # @field = Field.where(id: params[:field_id]).first
-      # @level = @field.levels.where(id: params[:level_id]).first
-      @level = Level.where(id: params[:level_id], field_id: params[:field_id] ).first
+      @field = Field.find(params[:field_id])
+      @level = @field.levels.find(params[:level_id])
     end
 
     def set_project
-      @project = @level.projects.where(id: params[:id]).first
+      @project = @level.projects.find(params[:id])
     end
 
     def project_params

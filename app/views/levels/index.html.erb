@@ -28,7 +28,7 @@
         <td><%= level.skill %></td>
         <td><%= level.tool %></td>
         <td><%= level.certificate %></td>
-        <td><%= link_to 'Show', field_level_path(@field, level) %></td>
+        <td><%= link_to 'Show', field_level_projects_path(@field, level) %></td>
         <td><%= link_to 'Edit', edit_field_level_path(@field, level) %></td>
         <td><%= link_to 'Destroy', field_level_path(@field, level), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
