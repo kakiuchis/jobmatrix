@@ -1,0 +1,25 @@
+<%= form_for(@levelname) do |f| %>
+  <% if @levelname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@levelname.errors.count, "error") %> prohibited this levelname from being saved:</h2>
+
+      <ul>
+      <% @levelname.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.number_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

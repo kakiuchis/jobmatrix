@@ -11,12 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225131821) do
+ActiveRecord::Schema.define(version: 20161230075645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "fields", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "level_names", force: :cascade do |t|
+    t.integer  "code"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "levelnames", force: :cascade do |t|
+    t.integer  "code"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,8 +45,9 @@ ActiveRecord::Schema.define(version: 20161225131821) do
     t.text     "skill"
     t.text     "tool"
     t.text     "certificate"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "levelname_id"
   end
 
   add_index "levels", ["field_id"], name: "index_levels_on_field_id", using: :btree

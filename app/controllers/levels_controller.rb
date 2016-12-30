@@ -3,7 +3,7 @@ class LevelsController < ApplicationController
   before_action :set_level, only: [:edit, :update, :destroy]
 
   def index
-    @levels = @field.levels.all
+    @levels = @field.levels.order("levelname_id")
     @fields = Field.all
   end
 
@@ -53,6 +53,6 @@ class LevelsController < ApplicationController
     end
 
     def level_params
-      params.require(:level).permit(:field_id, :height, :mintariff, :maxtariff, :name, :skill, :tool, :certificate)
+      params.require(:level).permit(:field_id, :height, :mintariff, :maxtariff, :name, :skill, :tool, :certificate, :levelname_id)
     end
 end

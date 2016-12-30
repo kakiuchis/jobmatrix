@@ -22,7 +22,7 @@
   <tbody>
     <% @levels.each do |level| %>
       <tr>
-        <td><%= level.height %></td>
+        <td><%= level.levelname.name %></td>
         <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
         <td><%= level.name %></td>
         <td><%= level.skill %></td>

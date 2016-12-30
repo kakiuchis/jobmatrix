@@ -15,8 +15,12 @@
     <%= f.hidden_field :field_id %>
   </div>
   <div class="field">
-    <%= f.label :height %><br>
-    <%= f.number_field :height %>
+    <%= f.label :levelname_id %><br>
+    <%= f.collection_select :levelname_id, Levelname.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :mintariff %><br>
@@ -25,10 +29,6 @@
   <div class="field">
     <%= f.label :maxtariff %><br>
     <%= f.number_field :maxtariff %>万円
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :skill %><br>
