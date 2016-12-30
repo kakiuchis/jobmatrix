@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230085648) do
+ActiveRecord::Schema.define(version: 20161230091309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20161230085648) do
   end
 
   add_index "levels", ["field_id"], name: "index_levels_on_field_id", using: :btree
+  add_index "levels", ["levelname_id"], name: "index_levels_on_levelname_id", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "level_id"

@@ -4,5 +4,5 @@ class Level < ActiveRecord::Base
   has_many :projects, dependent: :destroy
   validates :mintariff, presence: true, numericality: {greater_than: 0, less_than: :maxtariff, }
   validates :maxtariff, presence: true, numericality: {greater_than: 0, greater_than: :mintariff, }
-  validates :levelname_id, presence: true
+  validates :levelname_id, presence: true, uniqueness: true
 end

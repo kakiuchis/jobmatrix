@@ -1,4 +1,4 @@
 class Field < ActiveRecord::Base
   has_many :levels, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end
