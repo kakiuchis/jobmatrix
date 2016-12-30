@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161230062834) do
+ActiveRecord::Schema.define(version: 20161230085648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20161230062834) do
     t.text     "skill"
     t.text     "tool"
     t.text     "certificate"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "levelname_id"
   end
 
   add_index "levels", ["field_id"], name: "index_levels_on_field_id", using: :btree
