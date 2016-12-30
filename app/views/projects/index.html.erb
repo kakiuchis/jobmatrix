@@ -1,31 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+<h1><%= @field.name %><%= @level.name %>案件</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>Content</th>
-      <th>Level</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.level %></td>
-        <td><%= project.content %></td>
-        <td><%= project.level_id %></td>
-        <td><%= link_to 'Show', field_level_project_path(@field, @level, project) %></td>
-        <td><%= link_to 'Edit', edit_field_level_project_path(@field, @level, project) %></td>
-        <td><%= link_to 'Destroy', field_level_project_path(@field, @level, project), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_field_level_project_path %>
+<%= link_to '新規案件', new_field_level_project_path %>
+<%= link_to 'マトリックスに戻る', field_levels_path %>
+<% @projects.each do |project| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= project.content %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Edit', edit_field_level_project_path(@field, @level, project) %>
+      <%= link_to 'Destroy', field_level_project_path(@field, @level, project), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
