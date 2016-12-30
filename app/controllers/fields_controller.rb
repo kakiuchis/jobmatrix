@@ -20,7 +20,7 @@ class FieldsController < ApplicationController
 
     respond_to do |format|
       if @field.save
-        format.html { redirect_to fields_url, notice: 'Field was successfully created.' }
+        format.html { redirect_to fields_path, notice: 'Field was successfully created.' }
       else
         format.html { render :new }
       end
@@ -30,7 +30,7 @@ class FieldsController < ApplicationController
   def update
     respond_to do |format|
       if @field.update(field_params)
-        format.html { redirect_to fields_url, notice: 'Field was successfully updated.' }
+        format.html { redirect_to fields_path, notice: 'Field was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -40,7 +40,7 @@ class FieldsController < ApplicationController
   def destroy
     @field.destroy
     respond_to do |format|
-      format.html { redirect_to fields_url, notice: 'Field was successfully destroyed.' }
+      format.html { redirect_to fields_path, notice: 'Field was successfully destroyed.' }
     end
   end
 
