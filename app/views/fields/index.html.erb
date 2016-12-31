@@ -4,15 +4,14 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th colspan="2"></th>
+        <th colspan="1"></th>
       </tr>
     </thead>
     <tbody>
       <% @fields.each do |field| %>
         <tr>
           <td><%= link_to field.name, field_levels_path(field) %></td>
-          <td><%= link_to '', edit_field_path(field) , class: "fa fa-pencil-square-o" %></td>
-          <td><%= link_to '', field, method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+          <td><%= link_to '', edit_field_path(field), class: "fa fa-pencil-square-o" %> | <%= link_to '', field, method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
         </tr>
       <% end %>
     </tbody>

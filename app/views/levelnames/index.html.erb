@@ -1,28 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Levelnames</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @levelnames.each do |levelname| %>
+<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+  <h1>レベル</h1>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= levelname.code %></td>
-        <td><%= levelname.name %></td>
-        <td><%= link_to 'Edit', edit_levelname_path(levelname) %></td>
-        <td><%= link_to 'Destroy', levelname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Code</th>
+        <th>Name</th>
+        <th colspan="1"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Levelname', new_levelname_path %>
+    </thead>
+    <tbody>
+      <% @levelnames.each do |levelname| %>
+        <tr>
+          <td><%= levelname.code %></td>
+          <td><%= levelname.name %></td>
+          <td><%= link_to '', edit_levelname_path(levelname), class: "fa fa-pencil-square-o" %> | <%= link_to '', levelname, method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to '新しく作る', new_levelname_path, class: 'btn btn-default btn-block' %>
+</div>
