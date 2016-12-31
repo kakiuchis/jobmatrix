@@ -15,34 +15,30 @@
     <%= f.hidden_field :field_id %>
   </div>
   <div class="field">
-    <%= f.label :levelname_id %><br>
-    <%= f.collection_select :levelname_id, Levelname.all, :id, :name %>
+    <%= f.label :Level %><br>
+    <%= f.collection_select :levelname_id, Levelname.all, :id, :name, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :ポジション %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="field form-inline">
+    <%= f.label :タリフ %><br>
+    <%= f.number_field :mintariff, class: 'form-control' %>～<%= f.number_field :maxtariff, class: 'form-control' %>万円
   </div>
   <div class="field">
-    <%= f.label :mintariff %><br>
-    <%= f.number_field :mintariff %>万円
+    <%= f.label :スキル要件 %><br>
+    <%= f.text_area :skill, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :maxtariff %><br>
-    <%= f.number_field :maxtariff %>万円
+    <%= f.label :言語、ツール %><br>
+    <%= f.text_area :tool, class: 'form-control' %>
   </div>
   <div class="field">
-    <%= f.label :skill %><br>
-    <%= f.text_area :skill %>
-  </div>
-  <div class="field">
-    <%= f.label :tool %><br>
-    <%= f.text_area :tool %>
-  </div>
-  <div class="field">
-    <%= f.label :certificate %><br>
-    <%= f.text_area :certificate %>
+    <%= f.label :推奨資格 %><br>
+    <%= f.text_area :certificate, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '決定', class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>
