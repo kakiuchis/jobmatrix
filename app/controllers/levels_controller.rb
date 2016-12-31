@@ -19,7 +19,7 @@ class LevelsController < ApplicationController
 
     respond_to do |format|
       if @level.save
-        format.html { redirect_to field_levels_path, notice: 'Level was successfully created.' }
+        format.html { redirect_to field_levels_path, notice: 'レベルが作成されました。' }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class LevelsController < ApplicationController
   def update
     respond_to do |format|
       if @level.update(level_params)
-        format.html { redirect_to field_levels_path, notice: 'Level was successfully updated.' }
+        format.html { redirect_to field_levels_path, notice: 'レベルが更新されました。' }
       else
         format.html { render :edit }
       end
@@ -39,7 +39,7 @@ class LevelsController < ApplicationController
   def destroy
     @level.destroy
     respond_to do |format|
-      format.html { redirect_to field_levels_path, notice: 'Level was successfully destroyed.' }
+      format.html { redirect_to field_levels_path, notice: 'レベルが削除されました。' }
     end
   end
 

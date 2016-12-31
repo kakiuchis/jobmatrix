@@ -17,7 +17,7 @@ class FieldsController < ApplicationController
 
     respond_to do |format|
       if @field.save
-        format.html { redirect_to fields_path, notice: 'Field was successfully created.' }
+        format.html { redirect_to fields_path, notice: '分野が作成されました。' }
       else
         format.html { render :new }
       end
@@ -27,7 +27,7 @@ class FieldsController < ApplicationController
   def update
     respond_to do |format|
       if @field.update(field_params)
-        format.html { redirect_to fields_path, notice: 'Field was successfully updated.' }
+        format.html { redirect_to fields_path, notice: '分野が更新されました。' }
       else
         format.html { render :edit }
       end
@@ -37,7 +37,7 @@ class FieldsController < ApplicationController
   def destroy
     @field.destroy
     respond_to do |format|
-      format.html { redirect_to fields_path, notice: 'Field was successfully destroyed.' }
+      format.html { redirect_to fields_path, notice: '分野が削除されました。' }
     end
   end
 

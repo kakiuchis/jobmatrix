@@ -17,7 +17,7 @@ class LevelnamesController < ApplicationController
 
     respond_to do |format|
       if @levelname.save
-        format.html { redirect_to levelnames_path, notice: 'Levelname was successfully created.' }
+        format.html { redirect_to levelnames_path, notice: 'レベルが作成されました。' }
       else
         format.html { render :new }
       end
@@ -27,7 +27,7 @@ class LevelnamesController < ApplicationController
   def update
     respond_to do |format|
       if @levelname.update(levelname_params)
-        format.html { redirect_to levelnames_path, notice: 'Levelname was successfully updated.' }
+        format.html { redirect_to levelnames_path, notice: 'レベルが更新されました。' }
       else
         format.html { render :edit }
       end
@@ -37,7 +37,7 @@ class LevelnamesController < ApplicationController
   def destroy
     @levelname.destroy
     respond_to do |format|
-      format.html { redirect_to levelnames_path, notice: 'Levelname was successfully destroyed.' }
+      format.html { redirect_to levelnames_path, notice: 'レベルが削除されました。' }
     end
   end
 
