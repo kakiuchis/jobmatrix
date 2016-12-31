@@ -5,39 +5,40 @@
 </ul>
 
 <h1><%= @field.name %>マトリックス</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Level</th>
-      <th>タリフ</th>
-      <th>ポジション</th>
-      <th>スキル要件</th>
-      <th>言語、ツール</th>
-      <th>推奨資格</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @levels.each do |level| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= level.levelname.name %></td>
-        <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
-        <td><%= level.name %></td>
-        <td><%= simple_format(h(level.skill)) %></td>
-        <td><%= simple_format(h(level.tool)) %></td>
-        <td><%= simple_format(h(level.certificate)) %></td>
-        <td>
-          <%= link_to field_level_projects_path(@field, level) do %>
-            案件例（<%= level.projects.count %>件）
-          <% end %>
-        </td>
-        <td><%= link_to '', edit_field_level_path(@field, level), class: "fa fa-pencil-square-o" %> | <%= link_to '', field_level_path(@field, level), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+        <th>Level</th>
+        <th>タリフ</th>
+        <th>ポジション</th>
+        <th>スキル要件</th>
+        <th>言語、ツール</th>
+        <th>推奨資格</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
+
+    <tbody>
+      <% @levels.each do |level| %>
+        <tr>
+          <td><%= level.levelname.name %></td>
+          <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
+          <td><%= level.name %></td>
+          <td><%= simple_format(h(level.skill)) %></td>
+          <td><%= simple_format(h(level.tool)) %></td>
+          <td><%= simple_format(h(level.certificate)) %></td>
+          <td>
+            <%= link_to field_level_projects_path(@field, level) do %>
+              案件例（<%= level.projects.count %>件）
+            <% end %>
+          </td>
+          <td><%= link_to '', edit_field_level_path(@field, level), class: "fa fa-pencil-square-o" %> | <%= link_to '', field_level_path(@field, level), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+        </tr>
+      <% end %>
+    </tbody>
 </table>
+</div>
 
 <br>
 
