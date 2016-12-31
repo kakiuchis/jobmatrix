@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= current_user.email %></li>
+          <li><a href="#"><%= current_user.email %>でログインしています</a></li>
           <li><%= link_to '分野設定', fields_path %></li>
           <li><%= link_to 'レベル設定', levelnames_path %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>

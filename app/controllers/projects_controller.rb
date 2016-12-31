@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_field_level
   before_action :set_project, only: [:edit, :update, :destroy]
 
