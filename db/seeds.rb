@@ -8,5 +8,10 @@
 
 User.find_or_create_by(id: 1) do |user|
   user.email = 'admin@example.com'
-  user.password = 'password'
+  user.password = 'admin'
+end
+
+User.find_or_create_by(id: 2) do |user|
+  user.email = 'user@example.com'
+  user.password = 'user'
 end
