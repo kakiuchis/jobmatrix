@@ -20,7 +20,7 @@ ja:
         tool: "言語、ツールなど"
         certificate: "推奨資格"
       project:
-        content: "名前"
+        content: "内容"
       user:
         email: "メールアドレス"
         current_password: "現在のパスワード"
