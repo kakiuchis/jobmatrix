@@ -1,5 +1,6 @@
 class LevelnamesController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :set_levelname, only: [:edit, :update, :destroy]
 
   def index

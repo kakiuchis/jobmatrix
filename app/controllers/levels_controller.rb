@@ -1,5 +1,6 @@
 class LevelsController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :set_field
   before_action :set_level, only: [:edit, :update, :destroy]
 

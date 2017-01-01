@@ -18,4 +18,10 @@
   </table>
   <br>
   <%= link_to '新しく作る', new_field_path, class: 'btn btn-default btn-block' %>
+  <% if can? :update, current_user %>
++   <h1>You can update</h1>
++ <% end %>
++ <% if can? :destroy, current_user %>
++   <h1>You can destroy member</h1>
++ <% end %>
 </div>
