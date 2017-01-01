@@ -27,7 +27,7 @@
           <tr>
             <td><%= level.levelname.name %></td>
             <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
-            <td><%= level.name %></td>
+            <td><%= simple_format(h(level.name)) %></td>
             <td><%= simple_format(h(level.skill)) %></td>
             <td><%= simple_format(h(level.tool)) %></td>
             <td><%= simple_format(h(level.certificate)) %></td>
