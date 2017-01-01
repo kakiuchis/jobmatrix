@@ -20,6 +20,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'devise'
