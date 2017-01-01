@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
          :rememberable, :trackable, :validatable
-  enum role: {admin: 1, member: 2}
+  enum role: {sadmin: 0, admin: 1, member: 2}
 end
