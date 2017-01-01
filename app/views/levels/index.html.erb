@@ -10,14 +10,13 @@
       <thead>
         <tr>
           <th>Level</th>
+          <th colspan="1"></th>
           <th>タリフ</th>
           <th>ポジション</th>
           <th>スキル要件</th>
           <th>言語、ツール</th>
           <th>推奨資格</th>
-          <% if current_user.admin? %>
-            <th colspan="2"></th>
-          <% elsif current_user.member? %>
+          <% if current_user.admin? || current_user.sadmin? %>
             <th colspan="1"></th>
           <% end %>
         </tr>
@@ -26,18 +25,21 @@
         <% @levels.each do |level| %>
           <tr>
             <td><%= level.levelname.name %></td>
-            <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
-            <td><%= simple_format(h(level.name)) %></td>
-            <td><%= simple_format(h(level.skill)) %></td>
-            <td><%= simple_format(h(level.tool)) %></td>
-            <td><%= simple_format(h(level.certificate)) %></td>
             <td>
               <%= link_to field_level_projects_path(@field, level) do %>
                 案件例（<%= level.projects.count %>件）
               <% end %>
             </td>
-            <% if current_user.admin? %>
-              <td><%= link_to '', edit_field_level_path(@field, level), class: "fa fa-pencil-square-o" %> | <%= link_to '', field_level_path(@field, level), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+            <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
+            <td><%= simple_format(h(level.name)) %></td>
+            <td><%= simple_format(h(level.skill)) %></td>
+            <td><%= simple_format(h(level.tool)) %></td>
+            <td><%= simple_format(h(level.certificate)) %></td>
+            <% if current_user.admin? || current_user.sadmin? %>
+              <td><%= link_to '', edit_field_level_path(@field, level), class: "fa fa-pencil-square-o" %>
+              <% if current_user.sadmin? %>
+                 | <%= link_to '', field_level_path(@field, level), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+              <% end %>
             <% end %>
           </tr>
         <% end %>
@@ -45,7 +47,7 @@
   </table>
   </div>
   <br>
-  <% if current_user.admin? %>
+  <% if current_user.sadmin? %>
     <%= link_to 'レベルを追加する', new_field_level_path, class: 'btn btn-default btn-block' %>
   <% end %>
 </div>

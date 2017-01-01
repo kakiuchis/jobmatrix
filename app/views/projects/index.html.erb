@@ -1,6 +1,6 @@
 <div class="col-md-10 col-md-offset-1">
   <h1><%= @field.name %><%= @level.levelname.name %>案件</h1>
-  <% if current_user.admin? %>
+  <% if  current_user.admin? || current_user.sadmin? %>
     <%= link_to '案件を追加する', new_field_level_project_path, class: 'btn btn-default btn-block' %>
   <% end %>
   <%= link_to 'マトリックスに戻る', field_levels_path, class: 'btn btn-default btn-block' %>
@@ -12,7 +12,7 @@
       </div>
       <div class="panel-footer">
         <%= project.updated_at.strftime("%Y/%m/%d update") %>
-        <% if current_user.admin? %>
+        <% if current_user.admin? || current_user.sadmin? %>
            | <%= link_to '', edit_field_level_project_path(@field, @level, project), class: "fa fa-pencil-square-o" %> | 
           <%= link_to '', field_level_project_path(@field, @level, project), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %>
         <% end %>

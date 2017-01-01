@@ -28,8 +28,6 @@
             <li><%= link_to 'レベル設定', levelnames_path %></li>
           <% elsif current_user.admin? %>
             <li><a href="#">管理者でログイン中です</a></li>
-            <li><%= link_to '分野設定', fields_path %></li>
-            <li><%= link_to 'レベル設定', levelnames_path %></li>
           <% end %>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <% else %>

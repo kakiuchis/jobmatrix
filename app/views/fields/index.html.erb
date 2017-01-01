@@ -4,18 +4,24 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th colspan="1"></th>
+        <% if current_user.sadmin? %>
+          <th colspan="1"></th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
       <% @fields.each do |field| %>
         <tr>
           <td><%= link_to field.name, field_levels_path(field) %></td>
-          <td><%= link_to '', edit_field_path(field), class: "fa fa-pencil-square-o" %> | <%= link_to '', field, method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+          <% if current_user.sadmin? %>
+            <td><%= link_to '', edit_field_path(field), class: "fa fa-pencil-square-o" %> | <%= link_to '', field, method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
-  <%= link_to '新しく作る', new_field_path, class: 'btn btn-default btn-block' %>
+  <% if current_user.sadmin? %>
+    <%= link_to '新しく作る', new_field_path, class: 'btn btn-default btn-block' %>
+  <% end %>
 </div>
