@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      field: "分野"
+      levelname: "レベルの名前"
+      level: "レベル"
+      project: "案件"
+      user: "ユーザー"
+    attributes:
+      field:
+        name: "名前"
+      levelname:
+        code: "コード"
+        name: "名前"
+      level:
+        mintariff: "最小値"
+        maxtariff: "最大値"
+        name: "名前"
+        skill: "スキル要件"
+        tool: "言語、ツールなど"
+        certificate: "推奨資格"
+      project:
+        content: "名前"
+      user:
+        title: "タイトル"
+        name: "名前"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログインを記憶"
