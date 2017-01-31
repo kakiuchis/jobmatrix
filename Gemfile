@@ -13,6 +13,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -26,3 +31,6 @@ gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancancan'
+gem 'dotenv-rails'
+gem 'unicorn'
+gem 'therubyracer', platforms: :ruby
