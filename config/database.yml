@@ -82,4 +82,5 @@ production:
   <<: *default
   database: jobmatrix_production
   username: jobmatrix
+  port: 5432
   password: <%= ENV['JOBMATRIX_DATABASE_PASSWORD'] %>
