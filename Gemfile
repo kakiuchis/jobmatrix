@@ -23,6 +23,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 gem 'rails_12factor', group: :production
@@ -34,3 +35,5 @@ gem 'cancancan'
 gem 'dotenv-rails'
 gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
