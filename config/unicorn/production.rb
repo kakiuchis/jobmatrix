@@ -17,8 +17,7 @@ working_directory $app_dir
 stderr_path $std_log
 stdout_path $std_log
 timeout $timeout
-# listen  $listen
-listen 3000
+listen  $listen
 pid $pid
 
 #ホットデプロイをするかしないかを設定
