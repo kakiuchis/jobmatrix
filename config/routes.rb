@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'fields#index'
+  root 'top#index'
 end
