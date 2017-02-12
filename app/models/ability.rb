@@ -1,15 +1,22 @@
 class Ability
   include CanCan::Ability
   def initialize(user)
+    if user && user.admin_flg?
+      can :access, :rails_admin
+      can :manage, :all
+    end
+
     if user.sadmin?
       can :manage, :all
     end
+
     if user.admin?
       can :read, Field
       can :manage, Level
       can :manage, Project
       cannot [:new, :create, :destroy], Level
     end
+    
     if user.member?
       can :read, Field
       can :read, Level
