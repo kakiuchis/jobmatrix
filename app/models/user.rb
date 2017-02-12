@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
          :rememberable, :trackable, :validatable, :omniauthable
-  enum role: {sadmin: 0, admin: 1, member: 2}
+  enum role: {admin: 0, kanri: 1, sales: 2, teamleader: 3, member: 4}
 
   def self.find_for_google_oauth(auth, signed_in_resource=nil)
     user = User.find_by(uid: auth.uid, provider: auth.provider)
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
         uid:      auth.uid,
         token:    auth.credentials.token,
         password: Devise.friendly_token[0, 20],
-        role: 2
+        role: 4
         )
       # user.skip_confirmation!
       user.save(validate: false)

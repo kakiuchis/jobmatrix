@@ -6,11 +6,24 @@ class Ability
       can :manage, :all
     end
 
-    if user.sadmin?
+    if user.admin?
       can :manage, :all
     end
 
-    if user.admin?
+    if user.sales?
+      can :read, Field
+      can :manage, Level
+      can :manage, Project
+      cannot [:new, :create, :destroy], Level
+    end
+
+    if user.kanri?
+      can :read, Field
+      can :read, Level
+      can :read, Project
+    end
+
+    if user.teamleader?
       can :read, Field
       can :manage, Level
       can :manage, Project

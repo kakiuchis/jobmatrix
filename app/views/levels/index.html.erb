@@ -16,7 +16,7 @@
           <th>スキル要件</th>
           <th>言語、ツール</th>
           <th>推奨資格</th>
-          <% if current_user.admin? || current_user.sadmin? %>
+          <% if current_user.admin? || current_user.sales? || current_user.teamleader? %>
             <th colspan="1"></th>
           <% end %>
         </tr>
@@ -35,9 +35,9 @@
             <td><%= simple_format(h(level.skill)) %></td>
             <td><%= simple_format(h(level.tool)) %></td>
             <td><%= simple_format(h(level.certificate)) %></td>
-            <% if current_user.admin? || current_user.sadmin? %>
+            <% if current_user.admin? || current_user.sales? || current_user.teamleader? %>
               <td><%= link_to '', edit_field_level_path(@field, level), class: "fa fa-pencil-square-o" %>
-              <% if current_user.sadmin? %>
+              <% if current_user.admin? %>
                  | <%= link_to '', field_level_path(@field, level), method: :delete, data: { confirm: '削除しますか？管理者に確認してください。' }, class: "fa fa-trash" %></td>
               <% end %>
             <% end %>
@@ -47,7 +47,7 @@
   </table>
   </div>
   <br>
-  <% if current_user.sadmin? %>
+  <% if current_user.admin? %>
     <%= link_to 'レベルを追加する', new_field_level_path, class: 'btn btn-default btn-block' %>
   <% end %>
 </div>
