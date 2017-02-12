@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
         uid:      auth.uid,
         token:    auth.credentials.token,
         password: Devise.friendly_token[0, 20],
+        role: 2
         )
       # user.skip_confirmation!
       user.save(validate: false)
