@@ -61,7 +61,8 @@
 #   }
 
 # server '133.130.66.175', user: 'kakiuchi', roles: %w{kakiuchi db web}
-# set :ssh_options, keys: '/home/vagrant/.ssh_133.130.66.175/id_rsa'
-
 server '133.130.66.175', user: 'app', roles: %w{app db web}
-set :ssh_options, keys: '/c/Users/kakiuchi/.ssh/id_rsa'
+set :ssh_options, keys: '/home/vagrant/.ssh_133.130.66.175/id_rsa'
+
+
+# set :ssh_options, keys: '/c/Users/kakiuchi/.ssh/id_rsa'
