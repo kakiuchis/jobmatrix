@@ -19,7 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :environment, :development, :production
+set :environment, :production
 
 every '* * * * *' do
   command "echo 'cron production test'"
