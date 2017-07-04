@@ -39,3 +39,4 @@ gem 'therubyracer', platforms: :ruby
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails_admin'
+gem 'whenever', :require => false

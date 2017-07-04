@@ -61,3 +61,6 @@ namespace :deploy do
     end
   end
 end
+
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
