@@ -26,6 +26,9 @@ set :rbenv_type, :system
 #出力するログのレベル。
 set :log_level, :debug
 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
@@ -61,6 +64,3 @@ namespace :deploy do
     end
   end
 end
-
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
