@@ -21,6 +21,6 @@
 
 set :environment, :production
 
-every '* * * * *' do
-  command "echo 'cron production test2'"
-end
+# every '* * * * *' do
+#   command "echo 'cron production test2'"
+# end
