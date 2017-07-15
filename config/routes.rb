@@ -10,7 +10,5 @@ Rails.application.routes.draw do
     end
   end
 
-  # root '/fields/1/levels', to: 'levels#index'
-  # root :to => 'levels#index'
   root controller: 'levels', action: 'index', field_id: '1'
 end

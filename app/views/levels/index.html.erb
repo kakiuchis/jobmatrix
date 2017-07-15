@@ -27,7 +27,7 @@
             <td><%= level.levelname.name %></td>
             <td>
               <%= link_to field_level_projects_path(@field, level) do %>
-                案件例（<%= level.projects.count %>件）
+                <button type="button" class="btn btn-info">案件例（<%= level.projects.count %>件）</button>
               <% end %>
             </td>
             <td><%= level.mintariff %>～<%= level.maxtariff %>万円</td>
