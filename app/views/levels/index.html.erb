@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <ul class="nav nav-tabs">
+  <ul class="nav nav-tabs none">
     <% @fields.each do |field| %>
       <li role="presentation" class="<%= 'active' if current_page?(field_levels_path(field)) %>"><%= link_to field.name, field_levels_path(field) %></li>
     <% end %>
