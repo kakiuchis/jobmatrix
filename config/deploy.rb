@@ -6,6 +6,11 @@ set :application, 'jobmatrix'
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 set :repo_url, 'https://github.com/kakiuchis/jobmatrix'
 
+# 追記（更新されない問題）
+# set :repository, "ssh://git@github.com:kakiuchis/jobmatrix/new/repo.git"
+set :scm, :git
+set :deploy_via, :remote_cache
+
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 
