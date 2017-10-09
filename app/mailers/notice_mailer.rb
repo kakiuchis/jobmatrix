@@ -1,5 +1,5 @@
 class NoticeMailer < ApplicationMailer
-
+  default from: "jobmatrix@itpm-gk.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -8,7 +8,7 @@ class NoticeMailer < ApplicationMailer
   def sendmail_project(project)
     @project = project
 
-    mail to: "kakiuchis@gmail.com",
+    mail to: ENV['MAILADDRESS'],
          subject: '【jabmatrix】project add'
   end
 end
