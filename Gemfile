@@ -43,4 +43,4 @@ gem 'rails_admin'
 gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 gem 'daemons'
-gem 'capistrano3-delayed-job'
+gem 'capistrano3-delayed-job', '~> 1.0'
