@@ -25,6 +25,7 @@ group :development do
   gem 'spring'
   gem 'dotenv-rails'
   gem 'pry-rails'
+  gem 'letter_opener_web'
 end
 
 gem 'rails_12factor', group: :production
