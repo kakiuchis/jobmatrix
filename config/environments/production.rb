@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: '自分のHerokuアプリのドメイン' }
+  config.action_mailer.default_url_options = { host: 'http://133.130.66.175' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings =
     {user_name: ENV['SENDGRID_USERNAME'],
