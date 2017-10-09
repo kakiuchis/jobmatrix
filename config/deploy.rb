@@ -68,3 +68,6 @@ namespace :deploy do
 end
 
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
+set :delayed_job_workers, 1
+set :delayed_job_roles, [:app]
