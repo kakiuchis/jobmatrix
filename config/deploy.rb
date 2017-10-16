@@ -59,7 +59,9 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  after :publishing, :restart do
+    invoke 'delayed_job:restart'
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
