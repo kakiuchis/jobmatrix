@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        NoticeMailer.sendmail_project(@project).deliver
+        NoticeMailer.sendmail_project(@project).deliver_later
         format.html { redirect_to field_level_projects_path, notice: '案件が追加されました。' }
       else
         format.html { render :new }
