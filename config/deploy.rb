@@ -60,36 +60,6 @@ namespace :deploy do
     end
   end
 
-  task :stop_all_delayed_job do
-    on roles(:worker) do
-      within release_path do
-        begin
-          pids = capture(:cat, "tmp/pids/delayed_job*")
-        rescue
-          info "there is no delayed_job process."
-          next
-        end
-        pids.split("\n").each do |pid_s|
-          pid = pid_s.to_i
-          begin
-            execute(:kill, '-s', 'TERM', pid)
-            Timeout.timeout(5, TimeoutError) do
-              while (execute(:kill, '-s', 'EXIT', pid) rescue false)
-                 sleep(0.1)
-              end
-            end
-          rescue ::Exception => e
-            puts "exception while trying to stop monitor process #{pid}: #{e}"
-          end
-        end
-        begin; File.delete("tmp/pids/delayed_job*"); rescue ::Exception; end
-      end
-    end
-  end
-
-  after 'restart', 'stop_all_delayed_job'
-  after 'stop_all_delayed_job', 'delayed_job:start'
-
   after :publishing, :restart
 
   after :restart, :clear_cache do
