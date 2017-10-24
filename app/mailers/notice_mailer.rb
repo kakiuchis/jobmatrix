@@ -8,7 +8,7 @@ class NoticeMailer < ApplicationMailer
   def sendmail_project(project)
     @project = project
 
-    mail to: ENV['MAILADDRESS'],
+    mail to: "aaomonnnai@yahoo.co.jp",
          subject: '【jabmatrix】project add'
   end
 end
