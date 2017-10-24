@@ -60,9 +60,9 @@
 #     # password: 'please use keys'
 #   }
 
-# server '133.130.66.175', user: 'kakiuchi', roles: %w{kakiuchi db web}
-server '133.130.66.175', user: 'app', roles: %w{app db web}
-# set :ssh_options, keys: '/home/vagrant/.ssh_133.130.66.175/id_rsa'
-set :ssh_options, keys: '/home/vagrant/.ssh/id_rsa'
+set :stage, :production
+set :rails_env, 'production'
 
-# set :ssh_options, keys: '/c/Users/kakiuchi/.ssh/id_rsa'
+role :app,   %w{ app@133.130.66.175 }
+role :web,   %w{ app@133.130.66.175 }
+role :db,    %w{ app@133.130.66.175 }

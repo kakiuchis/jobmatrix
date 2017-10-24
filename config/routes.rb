@@ -10,9 +10,5 @@ Rails.application.routes.draw do
     end
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-
   root controller: 'levels', action: 'index', field_id: '1'
 end
