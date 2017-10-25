@@ -1,10 +1,10 @@
 GIT
-  remote: git://github.com/collectiveidea/delayed_job_active_record.git
-  revision: 45cebed242938dbf6d5bf1dd7d2523b99008f22e
+  remote: git@github.com:panter/delayed_job_active_record.git
+  revision: 111a122cdc4d5cdae027691ef7c68c5a76470df7
   specs:
-    delayed_job_active_record (4.1.2)
-      activerecord (>= 3.0, < 5.2)
-      delayed_job (>= 3.0, < 5)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0)
+      delayed_job (>= 3.0)
 
 GEM
   remote: https://rubygems.org/

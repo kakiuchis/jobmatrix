@@ -41,6 +41,6 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails_admin'
 gem 'whenever', :require => false
-gem 'delayed_job_active_record', :git => 'git://github.com/collectiveidea/delayed_job_active_record.git'
+gem 'delayed_job_active_record', :git => 'git@github.com:panter/delayed_job_active_record.git'
 gem 'daemons'
 gem 'capistrano3-delayed-job', '~> 1.0'
