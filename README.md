@@ -2,7 +2,7 @@
 
 ## URL
 
-https://dry-brushlands-42086.herokuapp.com/
+http://job.itpm-gk.com/
 
 ## 機能
 
